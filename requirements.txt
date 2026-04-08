@@ -1,0 +1,10 @@
+psycopg2-binary
+pandas                                                                                           
+requests        
+httpx   
+python-dotenv
+google-cloud-bigquery
+dbt-core             
+dbt-postgres
+dbt-bigquery                                                                                     
+sqlfluff
