@@ -1,0 +1,71 @@
+============================================================
+FILE COUNTS PER VINTAGE
+============================================================
+  2017-18: 30 files
+  2020-21: 31 files
+  2021-22: 32 files
+
+============================================================
+FILES MISSING FROM ONE OR MORE VINTAGES
+============================================================
+  computer_science
+    Present in:  2020-21, 2021-22
+    Missing from: 2017-18
+  covid_directional_indicators
+    Present in:  2020-21, 2021-22
+    Missing from: 2017-18
+  credit_recovery
+    Present in:  2017-18
+    Missing from: 2020-21, 2021-22
+  data_science
+    Present in:  2021-22
+    Missing from: 2017-18, 2020-21
+  internet_access_and_devices
+    Present in:  2020-21, 2021-22
+    Missing from: 2017-18
+  school_expenditures
+    Present in:  2017-18
+    Missing from: 2020-21, 2021-22
+
+============================================================
+COLUMN DISCREPANCY SUMMARY
+============================================================
+  Total discrepant columns across all files: 890
+
+  Top 5 files by column discrepancy count:
+    enrollment: 200 discrepant columns
+    algebra_i: 100 discrepant columns
+    advanced_placement: 98 discrepant columns
+    suspensions: 92 discrepant columns
+    retention: 52 discrepant columns
+
+  All files with discrepancies:
+    enrollment: 200
+    algebra_i: 100
+    advanced_placement: 98
+    suspensions: 92
+    retention: 52
+    harassment_and_bullying: 38
+    expulsions: 28
+    restraint_and_seclusion: 24
+    athletics: 20
+    offenses: 17
+    referrals_and_arrests: 16
+    corporal_punishment: 15
+    single_sex_classes: 9
+    dual_enrollment: 8
+    transfers: 8
+    calculus: 7
+    school_support: 7
+    international_baccalaureate: 6
+    advanced_mathematics: 5
+    algebra_ii: 5
+    biology: 5
+    chemistry: 5
+    geometry: 5
+    physics: 5
+    computer_science: 5
+    gifted_and_talented: 4
+    sat_and_act: 4
+    covid_directional_indicators: 4
+    school_characteristics: 2
