@@ -27,16 +27,19 @@ RESERVE_CODES = {
     "2021-22": {-3, -4, -5, -6, -9, -12, -13},                                            
 }
                                                                                             
-# These codes should not appear in public-use CRDC SCH files.                             
-# -4 is restricted-use only. -8 is EDFacts only.
-UNEXPECTED_CODES = {-4, -8}                                                               
+# -4 appears in public-use files when the underlying disaggregated data
+# is restricted-use only. The calculated total is reported but cannot be
+# computed from public data, so -4 is used as the suppression code.
+# It is treated as NULL in staging, same as other reserve codes.
+# -8 is EDFacts-only and should never appear in CRDC SCH files.
+UNEXPECTED_CODES = {-8}                                                               
                                                                                             
                                                                                             
 def handle_suppression(value, vintage):                                                   
     """         
     Given a raw value from a CRDC CSV and the vintage string, return a tuple of:
         (cleaned_value, is_suppressed, suppression_code)                                    
-                                                                                            
+                                                         
     Reserve codes are converted to NULL (None) with is_suppressed=True.                   
     Non-numeric values are returned unchanged with is_suppressed=False.                   
     """                                                                                   
