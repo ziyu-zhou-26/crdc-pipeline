@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_year
+    description: "One row per survey vintage. Maps survey_year integer to human-readable label."
+    columns:
+      - name: survey_year
+        description: "End year of the school year (e.g. 2022 for 2021-22). Primary key."
+        tests:
+          - unique
+          - not_null
+

@@ -8,3 +8,8 @@ data/
 *.zip
 *.txt.zip
 crdc_de_project_brief.md
+dbt/crdc/target/
+dbt/crdc/logs/
+dbt/crdc/.user.yml
+dbt/crdc/models/example/
+dbt/logs/

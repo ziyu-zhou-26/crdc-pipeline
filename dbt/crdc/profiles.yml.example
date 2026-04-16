@@ -1,0 +1,12 @@
+crdc:                                                                         
+    target: dev   
+    outputs:
+      dev:
+        type: postgres
+        host: localhost
+        port: 5432
+        user: YOUR_POSTGRES_USERNAME
+        password: ""                                                            
+        dbname: crdc
+        schema: mart                                                            
+        threads: 4
