@@ -43,13 +43,45 @@ models:
         tests:                                                                      
           - not_null                    
           - accepted_values:
-              arguments:                                                            
+              arguments:
                 values: [2018, 2021, 2022]
-      - name: school_name                                                           
+      - name: school_name
         description: "Name of the school."
         tests:
-          - not_null                                                                
-      - name: lea_id
-        description: "FK to dim_district."                                          
-        tests:                          
           - not_null
+      - name: lea_id
+        description: "FK to dim_district."
+        tests:
+          - not_null
+  - name: fct_enrollment_k12
+    description: "K-12 enrollment by school, survey year, subgroup, and sex. Unpivoted from wide CRDC enrollment files."                                         
+    columns:
+      - name: combokey
+        description: "FK to dim_school."
+        tests:
+          - not_null
+      - name: lea_id
+        description: "FK to dim_district."
+        tests:
+          - not_null
+      - name: survey_year
+        description: "FK to dim_year."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [2018, 2021, 2022]
+      - name: subgroup
+        description: "Race/ethnicity group or special population."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['hispanic', 'american_indian', 'asian', 'hawaiian_pacific_islander', 'black', 'white', 'two_or_more_races', 'total', 'english_learner', 'idea', 'section_504']
+      - name: sex
+        description: "Sex category."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['male', 'female', 'nonbinary']
