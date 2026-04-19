@@ -13,3 +13,4 @@ dbt/crdc/logs/
 dbt/crdc/.user.yml
 dbt/crdc/models/example/
 dbt/logs/
+logs/
