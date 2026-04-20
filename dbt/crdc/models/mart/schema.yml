@@ -117,3 +117,42 @@ models:
           - accepted_values:
               arguments:
                 values: ['male', 'female']
+  - name: fct_enrollment_k12_programs                                               
+    description: "K-12 program enrollment by school, survey year, program, subgroup, and sex. Programs: el, el_program, idea, section_504."                             
+    columns:                                                                        
+      - name: combokey
+        description: "FK to dim_school."                                            
+        tests:                              
+          - not_null                                                                
+      - name: lea_id
+        description: "FK to dim_district."                                          
+        tests:                              
+          - not_null                                                                
+      - name: survey_year
+        description: "FK to dim_year."                                              
+        tests:
+          - not_null                                                                
+          - accepted_values:
+              arguments:                    
+                values: [2018, 2021, 2022]
+      - name: program
+        description: "Program type."                                                
+        tests:                              
+          - not_null                                                                
+          - accepted_values:
+              arguments:                                                            
+                values: ['el', 'el_program', 'idea', 'section_504']
+      - name: subgroup                                                              
+        description: "Race/ethnicity group or special population."
+        tests:
+          - not_null                                                                
+          - accepted_values:                
+              arguments:                                                            
+                values: ['hispanic', 'american_indian', 'asian', 'hawaiian_pacific_islander', 'black', 'white', 'two_or_more_races', 'total', 'english_learner', 'idea']              
+      - name: sex                                                                   
+        description: "Sex category."                                                
+        tests:
+          - not_null                                                                
+          - accepted_values:
+              arguments:
+                values: ['male', 'female', 'nonbinary']
