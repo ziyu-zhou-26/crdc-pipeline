@@ -41,7 +41,8 @@ MART_TABLES = [
     "fct_enrollment_k12_programs",
     "fct_enrollment_ps_programs",
     "fct_internet",
-    "agg_internet_by_state",                
+    "agg_internet_by_state",
+    "agg_internet_national",
   ]
                                                                                      
 def get_pg_conn():                                                                  
