@@ -127,7 +127,7 @@ def load_ccd_schools(conn, vintage: str) -> None:
 
     logger.info(f"Loading {csv_path.name} → staging.{table_name}")
 
-    df = pd.read_csv(csv_path, dtype=str, encoding="latin-1")
+    df = pd.read_csv(csv_path, dtype=str, encoding="utf-8-sig")
 
     # Rename and drop unneeded ELSI columns
     df = _rename_ccd_columns(df)

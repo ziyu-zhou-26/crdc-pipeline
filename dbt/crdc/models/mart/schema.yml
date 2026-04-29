@@ -212,4 +212,32 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: [2021, 2022] 
+                values: [2021, 2022]
+  - name: dim_school_context
+    description: "CCD school characteristics joined to CRDC schools via crosswalk.
+    One row per school per vintage. 2018 rows have NULL for all CCD columns (no crosswalk).
+    ~1-2% of 2021/2022 rows are NULL (unmatched in crosswalk)."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - combokey
+              - survey_year
+    columns:
+      - name: combokey
+        description: "Composite PK with survey_year. FK to dim_school."
+        tests:
+          - not_null
+      - name: survey_year
+        description: "Composite PK with combokey. FK to dim_year."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [2018, 2021, 2022]
+      - name: locale_type
+        description: "Urbanicity classification from CCD. NULL for 2018 and unmatched schools."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['city', 'suburb', 'town', 'rural']
