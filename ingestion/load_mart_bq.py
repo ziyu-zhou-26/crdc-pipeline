@@ -44,6 +44,7 @@ MART_TABLES = [
     "agg_internet_by_state",
     "agg_internet_national",
     "dim_school_context",
+    "rpt_internet",
   ]
                                                                                      
 def get_pg_conn():                                                                  
